@@ -3,9 +3,15 @@ import Recipe from './../models/Recipe.js'
 
 const postRecipe = async (req,res) => {
     const { title, category, image, ingredients, description, user } = req.body;
+    console.log(user)
 
     const recipe = new Recipe({
-        title, category, image, ingredients, description, user
+        title,
+        category,
+        image, 
+        ingredients, 
+        description, 
+        user
     })
     try{
         const savedRecipe = await recipe.save();
@@ -25,11 +31,9 @@ const postRecipe = async (req,res) => {
     }
 }
 
-const getRecipe = async (req,res) => {
-    const {userId} = req.query
-    console.log('userId', userId)
+const getRecipes = async (req,res) => {
     
-    const user = await User.findById(userId);
+    const user = await User.find();
 
     if (!user) {
         return res.json({
@@ -39,14 +43,35 @@ const getRecipe = async (req,res) => {
         })
     }
 
-    const allRecipes = await Recipe.find({ user : userId }).sort({ createdAt : -1 })
     res.json({
         success: true,
-        data: allRecipes,
+        data: user,
         message: "All Recipe fetched successfully"
     })
 }
 
+const getRecipe =async (req, res) => {
+
+const {userId} = req.query
+console.log("userId :" ,userId)
+
+    const user = await User.findById(userId)
+
+    if(!user){
+        return res.json({
+            success : false,
+            data : null,
+            message : `User not found`
+        })
+    }
+
+    const recipes = await Recipe.find({user : userId}).sort({createdAt : -1});
+    res.json({
+        success : true,
+        data : recipes,
+        message : `Transaction fetched successfully`
+    })
+}
 const deleteRecipe = async (req,res)=>{
     const {id} = req.params
    
@@ -60,4 +85,4 @@ const deleteRecipe = async (req,res)=>{
     })
 }
 
-export {postRecipe, getRecipe, deleteRecipe}
+export {postRecipe, getRecipes, deleteRecipe, getRecipe}
