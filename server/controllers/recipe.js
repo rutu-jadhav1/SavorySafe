@@ -31,27 +31,8 @@ const postRecipe = async (req,res) => {
     }
 }
 
-const getRecipes = async (req,res) => {
-    
-    const user = await User.find();
 
-    if (!user) {
-        return res.json({
-            success: false,
-            data: null,
-            message: "User not found"
-        })
-    }
-
-    res.json({
-        success: true,
-        data: user,
-        message: "All Recipe fetched successfully"
-    })
-}
-
-const getRecipe =async (req, res) => {
-
+const getRecipe = async (req, res) => {
 const {userId} = req.query
 console.log("userId :" ,userId)
 
@@ -69,9 +50,10 @@ console.log("userId :" ,userId)
     res.json({
         success : true,
         data : recipes,
-        message : `Transaction fetched successfully`
+        message : `All Transaction fetched successfully`
     })
 }
+
 const deleteRecipe = async (req,res)=>{
     const {id} = req.params
    
@@ -85,4 +67,4 @@ const deleteRecipe = async (req,res)=>{
     })
 }
 
-export {postRecipe, getRecipes, deleteRecipe, getRecipe}
+export {postRecipe, deleteRecipe, getRecipe}
