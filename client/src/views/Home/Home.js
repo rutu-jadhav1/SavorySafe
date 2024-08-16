@@ -27,11 +27,12 @@ function Home() {
       <h2 className='heading heading-style'>Cook🍳, Share🤝, Savor😋</h2>
       <div className='recipe-div'>
         {
-          recipe.map((recipe) => {
+          recipe.map((recipe,i) => {
             const {_id, title, category, image, ingredients, description} = recipe;
             return (
               <RecipeCard
-                key={_id}
+                key={i}
+                _id={_id}
                 title={title}
                 category={category}
                 image={image}
