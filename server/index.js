@@ -27,7 +27,7 @@ app.get("/", (req,res)=>{
     })
 })
 app.post("/recipe", postRecipe)
-app.get("/recipes", getRecipe)
+app.get("/recipes/:id", getRecipe)
 app.delete("/recipe/:id", deleteRecipe)
 
 app.post("/signup", PostSignup)
