@@ -6,6 +6,7 @@ import toast, { Toaster } from 'react-hot-toast'
 
 import './Signup.css'
 import registerlogo from './register.png'
+import Navbar from './../../components/Navbar/Navbar.js'
 
 function Signup() {
 
@@ -44,6 +45,7 @@ function Signup() {
 
     return (
         <div>
+            <Navbar/>
             <form className='register-form text-style'>
                 <div className='register-name-container'>
                     <h2>Register Here</h2>

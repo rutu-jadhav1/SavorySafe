@@ -1,0 +1,24 @@
+.nav-c{
+    background-color:white;
+}
+.web-nm{
+    margin-left: 200px;
+}
+.nav-sec{
+    margin-left: 500px;
+}
+.web-direc{
+    margin: 0 50px;
+}
+.logot{
+    cursor: pointer;
+}
+
+@media screen and (max-width : 500px){
+    .web-nm{
+        margin-left: 30px;
+    }
+    .ham-nav{
+        margin-left: -390px;
+    }
+}

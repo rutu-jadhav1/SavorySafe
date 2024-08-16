@@ -7,6 +7,7 @@ import axios from 'axios'
 import './../Signup/Signup.css'
 import loginUser from './user.png'
 import loginSVg from './Login-amico.svg'
+import Navbar from '../../components/Navbar/Navbar'
 
 
 function Login() {
@@ -33,6 +34,7 @@ function Login() {
   }
   return (
     <div>
+      <Navbar/>
       <div className='login-pg'>
         <form className='register-form text-style'>
           <div className='name-container'>
