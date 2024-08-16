@@ -8,6 +8,7 @@ import './../Signup/Signup.css'
 import loginUser from './user.png'
 import loginSVg from './Login-amico.svg'
 import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
 
 
 function Login() {
@@ -63,6 +64,7 @@ function Login() {
         </div>
       </div>
       <Toaster />
+      <Footer/>
     </div>
   )
 }

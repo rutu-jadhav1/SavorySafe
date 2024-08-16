@@ -7,6 +7,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import './Signup.css'
 import registerlogo from './register.png'
 import Navbar from './../../components/Navbar/Navbar.js'
+import Footer from '../../components/Footer/Footer.js'
 
 function Signup() {
 
@@ -82,6 +83,7 @@ function Signup() {
               
             </form>
             <Toaster />
+            <Footer/>
         </div>
     )
 }

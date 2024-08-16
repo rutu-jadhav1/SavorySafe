@@ -1,0 +1,30 @@
+.footer-c{
+    background-color:white;
+}
+.footer-sub-container{
+    display: flex;
+    flex-direction: row;
+    margin-left: -800px;
+}
+.footer-contact{
+    margin: auto 100px;
+    text-decoration: none;
+    color: black;
+}
+.footer-contact-text{
+    margin-left: 240px;
+}
+.footer-contact-call{
+    margin-left: 150px;
+}
+
+
+@media screen and (max-width : 500px){
+    .footer-contact{
+        margin: auto 60px;
+    }
+    .footer-contact-text{
+        margin-left: 0;
+    }
+    
+}
