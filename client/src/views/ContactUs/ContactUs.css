@@ -44,11 +44,7 @@
     margin-bottom: 15px;
     border-radius: 50px;
 }
-.contact-btn:hover{
-    transition: 0.5s;
-    background-color: #fb9cb2;
-    border-radius: 50px;
-}
+
 
 
 @media screen and (max-width : 500px) {

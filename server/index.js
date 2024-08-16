@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { postLogin, PostSignup } from './controllers/user.js';
-import { deleteRecipe, getRecipe,  postRecipe } from './controllers/recipe.js';
+import { deleteRecipe, getRecipe,  postRecipe, getRecipes } from './controllers/recipe.js';
 dotenv.config();
 
 const app = express();
@@ -27,6 +27,7 @@ app.get("/", (req,res)=>{
     })
 })
 app.post("/recipe", postRecipe)
+app.get("/recipes", getRecipes)
 app.get("/recipes/:id", getRecipe)
 app.delete("/recipe/:id", deleteRecipe)
 

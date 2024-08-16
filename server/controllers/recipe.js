@@ -31,6 +31,16 @@ const postRecipe = async (req, res) => {
     }
 }
 
+const getRecipes = async (req,res) => {
+    const allRecipes = await Recipe.find().sort({updatedAt: -1})
+
+    res.json({
+        success : true,
+        data : allRecipes,
+        message : "All Recipe's fetched successfully"
+    })   
+}
+
 const getRecipe = async (req, res) => {
     const { userId } = req.query
     try {
@@ -71,4 +81,4 @@ const deleteRecipe = async (req, res) => {
     })
 }
 
-export { postRecipe, deleteRecipe, getRecipe }
+export { postRecipe, deleteRecipe, getRecipe, getRecipes }
