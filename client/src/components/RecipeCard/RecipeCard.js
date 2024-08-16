@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
 import './RecipeCard.css'
+import { Link } from 'react-router-dom'
 
 const RecipeCard = ({ _id, title, category, image, ingredients, description, loadRecipe }) => {
     const deleteRecipe = async (recipeId) => {

@@ -68,6 +68,20 @@ const getRecipe = async (req, res) => {
 
 }
 
+const updateRecipe = async (req, res) => {
+    const { id } = req.params
+    const { title, category, image, ingredients, description } = req.body
+
+    const updatedRecipe = await Recipe.findByIdAndUpdate(id, {
+        title, category, image, ingredients, description
+    })
+    res.json({
+        success: true,
+        data: updatedRecipe,
+        message: "Recipe Updated Successfully"
+    })
+
+}
 const deleteRecipe = async (req, res) => {
     const { id } = req.params
 
@@ -81,4 +95,4 @@ const deleteRecipe = async (req, res) => {
     })
 }
 
-export { postRecipe, deleteRecipe, getRecipe, getRecipes }
+export { postRecipe, deleteRecipe, getRecipe, getRecipes ,updateRecipe }
