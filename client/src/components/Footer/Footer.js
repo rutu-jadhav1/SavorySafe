@@ -27,7 +27,7 @@ function Footer() {
                     </a>
                 </div>
                 <div className="card-footer text-body-secondary">
-                    © 2024 ShortenMe. All rights reserved.
+                    © 2024 SavorySafe. All rights reserved.
                 </div>
             </div>
         </div>
